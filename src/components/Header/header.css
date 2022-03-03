@@ -1,0 +1,20 @@
+* {
+  font-family: Mont;
+}
+
+header {
+  background-color: #040619;
+  width: 1920px;
+  height: 86ox;
+  fill: Solid;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+button {
+  background-color: #00ffa3;
+  border-radius: 80px;
+}
