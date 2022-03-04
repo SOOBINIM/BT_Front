@@ -1,20 +1,32 @@
-* {
-  font-family: Mont;
-}
+/* * {
+  font-family: Montserrat-Regular;
+} */
 
-header {
-  background-color: #040619;
+/* header {
+  display: flex;
+  background-color: #c6c9e9;
   width: 1920px;
   height: 86ox;
   fill: Solid;
-}
+  flex-direction: row;
+} */
 
-a {
+/* a {
   text-decoration: none;
-  color: #fff;
-}
+  color: #d8b9b9;
+  font-family: "Montserrat";
+} */
 
-button {
+/* button {
   background-color: #00ffa3;
   border-radius: 80px;
-}
+} */
+
+/* .banner img {
+  width: 1920px;
+  height: 1080px;
+} */
+
+/* .container {
+  flex-direction: row;
+} */

@@ -1,8 +1,5 @@
 @font-face {
-  font-family: "Montserrat", sans-serif;
-  src: url("./Montserrat-Italic-VariableFont_wght.eot?iefix")
-      format("embedded-opentype"),
-    url("./Montserrat-Italic-VariableFont_wght.ttf") format("truetype"),
-    url("./Montserrat-VariableFont_wght.eot") format("embedded-opentype"),
-    url("./Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-family: "Montserrat";
+  src: url("./Montserrat-Regular.ttf") format("truetype"),
+    url("./Montserrat-Regular.eot") format("embedded-opentype");
 }
