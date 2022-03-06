@@ -11,9 +11,22 @@ const Button = styled.button`
   color: #040619;
 `;
 
-const H1 = styled.h1`
+const P1 = styled.p`
+    /* background: #003afe; */
+    background: -webkit-linear-gradient(left, #003afe, #00ffa3);
+    background:    -moz-linear-gradient(right, #003afe, #00ffa3);
+    background:      -o-linear-gradient(right, #003afe, #00ffa3);
+    background:         linear-gradient(to right, #003afe, #00ffa3);
+    /* -webkit-background-clip: text; */
+            background-clip: text;
+    color: transparent;
+    font-weight: bold;
+  /* display: flex;
+  justify-content: flex-end;
   background: linear-gradient(to right, #003afe, #00ffa3);
-  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  
 `;
 
 function BitmanWeb() {
@@ -26,7 +39,7 @@ function BitmanWeb() {
   const discordButton = "Join Discord";
   return (
     <Div>
-      <H1>{title}</H1>
+      <P1>{title}</P1>
       <p>{desciption}</p>
       <Button>{discordButton}</Button>
     </Div>

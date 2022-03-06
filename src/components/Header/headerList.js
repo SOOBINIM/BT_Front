@@ -5,81 +5,92 @@ import styled from "styled-components";
 
 const Header = styled.header`
   background-color: #d8b9b9;
-  z-index: 999;
-  position: absolute;
-  width: 100%;
+  /* z-index: 999; */
+  /* position: relative; */
+  /* width: 100%; */
   font-family: Montserrat-Regular;
   /* position: fixed; */
   // background-color: #040619;
 `;
 
 const HeaderDiv = styled.div`
+  display: flex;
+  background-color: #f2d8d3;
+  position: relative;
   width: 1920px;
   height: 86px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+  margin: 0 auto;
+  /* display: flex; */
+  /* width: 100%; */
 `;
 
-const ImgDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 26px;
-  /* margin-left: 300px; */
+const HeaderInnerDiv = styled`
+  position: absolute;
+  height: 34px;
+  top: 0;
+  bottom: 0;
+  /* margin: auto; */
 `;
 
 const Img = styled.img`
-  width: 100%;
-  height: 100%;
+  background-color: blue;
 `;
 
-const Nav = styled.nav`
-  background-color: #a3b9b9;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  /* margin-right: 300px; */
-  /* display: flex;
-  align-items: center;
-  align-self: stretch;
-  height: 100%; */
-`;
+const Nav = styled.nav``;
+
+// const Nav = styled.nav`
+//   background-color: #a3b9b9;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   /* margin-right: 300px; */
+//   /* display: flex;
+//   align-items: center;
+//   align-self: stretch;
+//   height: 100%; */
+// `;
 
 const Ul = styled.ul`
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: flex-end;
   list-style: none;
 `;
 
-const Li = styled.li`
-  margin-right: 50px;
-`;
+// const Li = styled.li`
+//   margin-right: 50px;
+// `;
 
-const TitleItems = styled.a`
+const A = styled.a`
   text-decoration: none;
   color: #fff;
-  font-family: "Montserrat";
+  background-color: black;
+  /* font-size: 40px; */
+  display: block;
+
+  /* font-family: "Montserrat"; */
+`;
+
+const ButtonDiv = styled.div`
+  background-color: red;
+  height: 34px;
+  top: 0;
+  bottom: 0;
+  /* margin: auto; */
 `;
 
 const Button = styled.button`
   background-color: #00ffa3;
   border-radius: 80px;
-  border: 0;
-  outline: 0;
-  padding: 12px, 42px, 12px, 42px;
+  padding: 12px, 42px;
 `;
 
 function Title({ title }) {
   return (
-    <Li>
-      <TitleItems href="#" style={{ color: title.color }}>
+    <li>
+      <A href="#" style={{ color: title.color }}>
         {title.content}
-      </TitleItems>
-    </Li>
+      </A>
+    </li>
   );
 }
 
@@ -87,21 +98,17 @@ function TitleList({ titles }) {
   return (
     <Header>
       <HeaderDiv>
-        <ImgDiv>
+        <HeaderInnerDiv>
           <Img src={logoPath} alt="BTMT Text Symbol"></Img>
-        </ImgDiv>
-        <Nav>
-          <Ul>
-            {/* <Positioner> */}
-
-            {titles.map((title) => (
-              <Title title={title} />
-            ))}
+          <nav>
+            <Ul>
+              {titles.map((title) => (
+                <Title title={title} />
+              ))}
+            </Ul>
             <Button>Discord</Button>
-
-            {/* </Positioner> */}
-          </Ul>
-        </Nav>
+          </nav>
+        </HeaderInnerDiv>
       </HeaderDiv>
     </Header>
   );
