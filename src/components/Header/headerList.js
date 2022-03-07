@@ -24,12 +24,12 @@ const HeaderDiv = styled.div`
   /* width: 100%; */
 `;
 
-const HeaderInnerDiv = styled`
+const HeaderInnerDiv = styled.div`
   position: absolute;
   height: 34px;
   top: 0;
   bottom: 0;
-  /* margin: auto; */
+  margin: auto;
 `;
 
 const Img = styled.img`
@@ -70,13 +70,13 @@ const A = styled.a`
   /* font-family: "Montserrat"; */
 `;
 
-const ButtonDiv = styled.div`
-  background-color: red;
-  height: 34px;
-  top: 0;
-  bottom: 0;
-  /* margin: auto; */
-`;
+// const ButtonDiv = styled.div`
+//   background-color: red;
+//   height: 34px;
+//   top: 0;
+//   bottom: 0;
+//   /* margin: auto; */
+// `;
 
 const Button = styled.button`
   background-color: #00ffa3;

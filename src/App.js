@@ -1,4 +1,5 @@
 import React from "react";
+import GlobalStyle from "./GlobalStyle";
 
 // css
 
@@ -14,6 +15,7 @@ import Footer from "./components/Footer/footer";
 function App() {
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Body />
       <Footer />

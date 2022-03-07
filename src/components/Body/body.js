@@ -5,6 +5,10 @@ import Banner from "./banner";
 import Division from "./division";
 import BitmanWeb from "./bitmanWeb";
 import InfoList from "./infoList";
+import FeaturesList from "./features";
+import Community from "./commusities";
+import TiresList from "./tiers";
+import RoadmapList from "./Roadmap";
 
 const Div = styled.div`
   /* display: flex; */
@@ -17,6 +21,10 @@ function Body() {
       <Division />
       <BitmanWeb />
       <InfoList />
+      <FeaturesList />
+      <Community />
+      <TiresList />
+      <RoadmapList />
     </Div>
   );
 }
