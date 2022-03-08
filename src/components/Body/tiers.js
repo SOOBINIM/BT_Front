@@ -80,7 +80,7 @@ function TiresList() {
     },
   ];
   return (
-    <dvi>
+    <div>
       <h1>Tiers</h1>
       <Div>
         <h1>TIER1</h1>
@@ -97,7 +97,7 @@ function TiresList() {
         <h1>Go to be Tire2</h1>
         <h1>Go to be Tire3</h1>
       </Div>
-    </dvi>
+    </div>
   );
 }
 

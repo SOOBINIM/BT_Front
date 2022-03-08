@@ -1,115 +1,82 @@
 import React from "react";
 import logoPath from "../../img/BTMT_TextSymbol.png";
 import styled from "styled-components";
-// import GlobalStyle from "./GlobalStyle";
 
 const Header = styled.header`
-  background-color: #d8b9b9;
-  /* z-index: 999; */
-  /* position: relative; */
-  /* width: 100%; */
-  font-family: Montserrat-Regular;
-  /* position: fixed; */
-  // background-color: #040619;
-`;
-
-const HeaderDiv = styled.div`
-  display: flex;
-  background-color: #f2d8d3;
-  position: relative;
-  width: 1920px;
-  height: 86px;
-  margin: 0 auto;
-  /* display: flex; */
-  /* width: 100%; */
+  background-color: #040619;
 `;
 
 const HeaderInnerDiv = styled.div`
-  position: absolute;
-  height: 34px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  width: 1320px;
+  height: 86px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-const Img = styled.img`
-  background-color: blue;
+const Nav = styled.nav`
+  display: flex;
 `;
-
-const Nav = styled.nav``;
-
-// const Nav = styled.nav`
-//   background-color: #a3b9b9;
-//   width: 100%;
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   /* margin-right: 300px; */
-//   /* display: flex;
-//   align-items: center;
-//   align-self: stretch;
-//   height: 100%; */
-// `;
 
 const Ul = styled.ul`
   display: flex;
   list-style: none;
 `;
 
-// const Li = styled.li`
-//   margin-right: 50px;
-// `;
+const Li = styled.li`
+  font-size: 18px;
+  font-weight: 500;
+  padding-right: 64px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+`;
 
 const A = styled.a`
   text-decoration: none;
-  color: #fff;
-  background-color: black;
-  /* font-size: 40px; */
   display: block;
-
-  /* font-family: "Montserrat"; */
+  color: #fff;
+  &:hover {
+    color: #00ffa3;
+  }
 `;
 
-// const ButtonDiv = styled.div`
-//   background-color: red;
-//   height: 34px;
-//   top: 0;
-//   bottom: 0;
-//   /* margin: auto; */
-// `;
-
 const Button = styled.button`
+  width: 149px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 700;
   background-color: #00ffa3;
+  &:hover {
+    background: linear-gradient(to right, #00ffa3, #003afe);
+    color: #fff;
+  }
   border-radius: 80px;
   padding: 12px, 42px;
 `;
 
 function Title({ title }) {
   return (
-    <li>
-      <A href="#" style={{ color: title.color }}>
-        {title.content}
-      </A>
-    </li>
+    <Li>
+      <A href="#">{title.content}</A>
+    </Li>
   );
 }
 
 function TitleList({ titles }) {
   return (
     <Header>
-      <HeaderDiv>
-        <HeaderInnerDiv>
-          <Img src={logoPath} alt="BTMT Text Symbol"></Img>
-          <nav>
-            <Ul>
-              {titles.map((title) => (
-                <Title title={title} />
-              ))}
-            </Ul>
-            <Button>Discord</Button>
-          </nav>
-        </HeaderInnerDiv>
-      </HeaderDiv>
+      <HeaderInnerDiv>
+        <img src={logoPath} alt="BTMT Text Symbol"></img>
+        <Nav>
+          <Ul>
+            {titles.map((title) => (
+              <Title title={title} />
+            ))}
+          </Ul>
+          <Button>Discord</Button>
+        </Nav>
+      </HeaderInnerDiv>
     </Header>
   );
 }

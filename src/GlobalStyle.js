@@ -5,10 +5,13 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
     * {
     box-sizing: border-box;
+    font-family: "Montserrat";
+
   }
   body{
-    background-color: #ffffff;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background-color: #000000;
+    color : #fff;
+    /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
   }
   a {
     color: inherit;

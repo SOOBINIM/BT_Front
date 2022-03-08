@@ -1,6 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
+const Div = styled.div`
+  width: 1320px;
+  height: 640px;
+  margin: 0 auto;
+`;
+
+const InnerDiv = styled.div`
+  display: flex;
+`;
+
+const H1 = styled.h1`
+  font-weight: 800;
+  font-size: 80px;
+`;
+
 function FeaturesItme({ data }) {
   return (
     <dl>
@@ -33,14 +48,14 @@ function FeaturesList() {
     },
   ];
   return (
-    <div>
-      <h1>Features</h1>
-      <div>
+    <Div>
+      <H1>Features</H1>
+      <InnerDiv>
         {featuresItems.map((features) => (
           <FeaturesItme data={features} />
         ))}
-      </div>
-    </div>
+      </InnerDiv>
+    </Div>
   );
 }
 

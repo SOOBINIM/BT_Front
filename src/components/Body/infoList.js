@@ -1,19 +1,91 @@
 import React from "react";
 import styled from "styled-components";
 
+const InnerDiv = styled.div`
+  width: 1320px;
+  margin: 0 auto;
+`;
+
+const TitleDiv = styled.div`
+  /* display: flex; */
+`;
+
+const Dl = styled.dl`
+  display: flex;
+  justify-content: space-between;
+  /* width: 1320px; */
+
+  margin-top: 160px;
+`;
+const Dt = styled.dt`
+  color: #00ffa3;
+  line-height: 100%;
+  vertical-align: top;
+  font-weight: 800;
+  font-size: 52px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* background-color: red; */
+`;
+const Dd1 = styled.dd`
+  font-weight: 800;
+  font-size: 180px;
+  letter-spacing: 2%;
+  /* width: 600px; */
+  background: linear-gradient(#00ffa3, #00fff0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+`;
+const Dd2 = styled.dd`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 640px;
+  margin-right: 4px;
+  /* margin-left: 122px; */
+  /* background-color: blue; */
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 48px;
+`;
+
+const ButtonDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+`;
+
 const Button = styled.button`
   background-color: #00ffa3;
-  border-radius: 40px;
   padding: 19px, 66px;
+
+  border-radius: 40px;
+  border: 1px solid #00ffa3;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  font-weight: 700;
+  font-size: 24px;
+
+  padding: 19px 66px;
 `;
 
 function InfoItem({ data }) {
   return (
-    <dl>
-      <dt>{data.title}</dt>
-      <dd>{data.score}</dd>
-      <dd>{data.description}</dd>
-    </dl>
+    <TitleDiv>
+      <Dl>
+        <div>
+          <Dt>{data.title}</Dt>
+          <Dd1>{data.score}</Dd1>
+        </div>
+        <div>
+          <Dd2>{data.description}</Dd2>
+        </div>
+      </Dl>
+    </TitleDiv>
   );
 }
 
@@ -45,14 +117,18 @@ function InfoList() {
     },
   ];
   return (
-    <div>
-      {infoItems.map((info) => (
-        // (info) => console.log(info)
+    <InnerDiv>
+      <TitleDiv>
+        {infoItems.map((info) => (
+          // (info) => console.log(info)
 
-        <InfoItem data={info} />
-      ))}
-      <Button>Join BITMAN</Button>
-    </div>
+          <InfoItem data={info} />
+        ))}
+      </TitleDiv>
+      <ButtonDiv>
+        <Button>Join BITMAN</Button>
+      </ButtonDiv>
+    </InnerDiv>
   );
 }
 
