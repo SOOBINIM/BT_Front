@@ -1,5 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./App.css";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -17,7 +20,12 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-  input, button {
+  /* input, button {
+
+  } */
+
+  button {
+    cursor: pointer;
     background-color: transparent;
     border: none;
     outline: none;

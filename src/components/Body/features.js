@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
 
 const Div = styled.div`
   width: 1320px;
@@ -47,8 +48,14 @@ function FeaturesList() {
         "Users who own BTMT can participate in votes for internal policy of Bitman Web 3.0. Only BTMT holders can vote.",
     },
   ];
+  const settings = {};
+
   return (
-    <Div>
+    <Div
+    // onMouseOver={(event) => {
+    //   console.log(event.target.innerText);
+    // }}
+    >
       <H1>Features</H1>
       <InnerDiv>
         {featuresItems.map((features) => (
