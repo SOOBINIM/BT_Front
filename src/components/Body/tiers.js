@@ -3,14 +3,22 @@ import styled from "styled-components";
 
 const Div = styled.div`
   display: flex;
+  width: 1320px;
+  margin: 0 auto;
 `;
 
 function TiresItem({ data }) {
   return (
     <dl>
+      {/* {console.log(data?.description.length)}
+      {console.log(typeof data?.description)}
+      {data?.description?.length &&
+        data?.description?.map((e) => console.log(e))} */}
+
       <dt>{data.title}</dt>
-      <dd>{data.status}</dd>
-      <dd>{data.descriptions}</dd>
+      <dd>{data.status.map((statusData) => console.log(statusData))}</dd>
+
+      {/* <dd>{data.descriptions.map((descData) => console.log(descData))}</dd> */}
     </dl>
   );
 }
@@ -18,12 +26,12 @@ function TiresItem({ data }) {
 function TiresList() {
   const tireItems = [
     {
-      title: "One Star",
-      status: "HODL 100 BTMT",
-      description: "You can join the Web3.0 BITMAN Discord community",
+      title: ["One Star"],
+      status: ["HODL 100 BTMT"],
+      description: ["You can join the Web3.0 BITMAN Discord community"],
     },
     {
-      title: "Benefits",
+      title: ["Benefits"],
       status: [
         "HODL 100 BTMT",
         "Research and Content",
@@ -40,13 +48,13 @@ function TiresList() {
       ],
     },
     {
-      title: "Two Stars",
-      status: "HODL 500 BTMT",
+      title: ["Two Stars"],
+      status: ["HODL 500 BTMT"],
 
-      description: "You can join the Web3.0 BITMAN Discord community",
+      description: ["You can join the Web3.0 BITMAN Discord community"],
     },
     {
-      title: "Benefits",
+      title: ["Benefits"],
       status: [
         "Normal Guild Channel",
         "Normal Guids",
@@ -61,12 +69,12 @@ function TiresList() {
       ],
     },
     {
-      title: "Three Stars",
-      status: "BTMT NFT Holders & Hodl 2,000 BTMT",
-      description: "You can join the Web3.0 BITMAN Discord community",
+      title: ["Three Stars"],
+      status: ["BTMT NFT Holders & Hodl 2,000 BTMT"],
+      description: ["You can join the Web3.0 BITMAN Discord community"],
     },
     {
-      title: "Benefits",
+      title: ["Benefits"],
       status: [
         "Exclusive Guilds Channel",
         "IDO/IEO Deal Access",
@@ -80,7 +88,7 @@ function TiresList() {
     },
   ];
   return (
-    <div>
+    <Div>
       <h1>Tiers</h1>
       <Div>
         <h1>TIER1</h1>
@@ -97,7 +105,7 @@ function TiresList() {
         <h1>Go to be Tire2</h1>
         <h1>Go to be Tire3</h1>
       </Div>
-    </div>
+    </Div>
   );
 }
 
