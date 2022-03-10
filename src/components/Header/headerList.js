@@ -47,6 +47,7 @@ const Button = styled.button`
   font-size: 16px;
   font-weight: 700;
   background-color: #00ffa3;
+
   &:hover {
     background: linear-gradient(to right, #00ffa3, #003afe);
     color: #fff;

@@ -6,11 +6,13 @@ import Division from "./division";
 import BitmanWeb from "./bitmanWeb";
 import InfoList from "./infoList";
 import FeaturesList from "./features";
-import Community from "./commusities";
+import Community from "./community";
 import TiresList from "./tiers";
-import RoadmapList from "./Roadmap";
+import RoadmapList from "./roadmap";
 
 const Div = styled.div`
+  /* position: relative; */
+  /* z-index: 3; */
   /* display: flex; */
 `;
 
@@ -24,7 +26,7 @@ function Body() {
       <FeaturesList />
       <Community />
       <TiresList />
-      <RoadmapList />
+      {/* <RoadmapList /> */}
     </Div>
   );
 }

@@ -17,7 +17,8 @@ const Dl = styled.dl`
 
   margin-top: 160px;
 `;
-const Dt = styled.dt`
+
+const DtTitle = styled.dt`
   color: #00ffa3;
   line-height: 100%;
   vertical-align: top;
@@ -27,7 +28,20 @@ const Dt = styled.dt`
   /* flex-direction: column; */
   /* background-color: red; */
 `;
-const Dd1 = styled.dd`
+
+const DtSubTitle = styled.dt`
+  color: #00ffa3;
+  line-height: 100%;
+  vertical-align: top;
+  font-weight: 800;
+  font-size: 32px;
+  margin-left: 10px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* background-color: red; */
+`;
+
+const DdScore = styled.dd`
   font-weight: 800;
   font-size: 180px;
   letter-spacing: 2%;
@@ -37,7 +51,19 @@ const Dd1 = styled.dd`
   background-clip: text;
   color: transparent;
 `;
-const Dd2 = styled.dd`
+
+const DdScoreUnit = styled.dd`
+  font-weight: 500;
+  font-style: normal;
+  font-size: 140px;
+  letter-spacing: 2%;
+  line-height: 170.66px;
+  color: #00fff0;
+  margin-left: 16px;
+  margin-top: 48px;
+`;
+
+const DdDescription = styled.dd`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -73,16 +99,27 @@ const Button = styled.button`
   padding: 19px 66px;
 `;
 
+const DDiv = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 function InfoItem({ data }) {
   return (
     <TitleDiv>
       <Dl>
         <div>
-          <Dt>{data.title}</Dt>
-          <Dd1>{data.score}</Dd1>
+          <DDiv>
+            <DtTitle>{data.title}</DtTitle>
+            <DtSubTitle>{data.subTitle}</DtSubTitle>
+          </DDiv>
+          <DDiv>
+            <DdScore>{data.score}</DdScore>
+            <DdScoreUnit>{data.scoreUnit}</DdScoreUnit>
+          </DDiv>
         </div>
         <div>
-          <Dd2>{data.description}</Dd2>
+          <DdDescription>{data.description}</DdDescription>
         </div>
       </Dl>
     </TitleDiv>
@@ -93,25 +130,32 @@ function InfoList() {
   const infoItems = [
     {
       title: "Signed up user",
-      score: "850 K+",
+      subTitle: "",
+      score: "850",
+      scoreUnit: "K+",
       description:
         "Bitman has more than 850K signed up users as of Feburary, 2022. When we guess the non-signed up users, the number of Bitman community users would be more than 2M, which is the biggest in South Korea.",
     },
     {
-      title: "MAU (Monthly Active Users)",
-      score: "520 K+",
+      title: "MAU",
+      subTitle: "(Monthly Active Users)",
+      score: "520",
+      scoreUnit: "K+",
       description:
         "Bitman has 520K monthly active users. There are a lot of blockchain industry news feed, technical articles which educates diverse blockchain services, monthly news letter etc,. ",
     },
     {
-      title: "DAU (Daily Active Users)",
-      score: "100 K+",
+      title: "DAU",
+      subTitle: "(Daily Active Users)",
+      score: "100",
+      scoreUnit: "K+",
       description:
         "Bitman is the best community where users can get important news regarding blockchain industry and crypto projects, a lot of crypto investors and project builder come to Biman to get news.",
     },
     {
       title: "Monthly Posting",
-      score: "30 K+",
+      score: "30",
+      scoreUnit: "K+",
       description:
         "As Bitman is the best community where users can get important news regarding blockchain industry and crypto projects, a lot of crypto investors and project builder come to Biman to get news.",
     },

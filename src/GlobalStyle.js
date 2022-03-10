@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 
 const GlobalStyle = createGlobalStyle`
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@800&display=swap');
     ${reset}
     * {
     box-sizing: border-box;
@@ -14,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     background-color: #000000;
     color : #fff;
-    /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
+    font-family: 'Montserrat', sans-serif;
   }
   a {
     color: inherit;
@@ -23,6 +25,9 @@ const GlobalStyle = createGlobalStyle`
   /* input, button {
 
   } */
+  div,a,span,p {
+    font-family: 'Montserrat', sans-serif;  
+  }
 
   button {
     cursor: pointer;

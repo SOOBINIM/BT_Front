@@ -21,7 +21,6 @@ const TextDiv = styled.div`
 `;
 
 const P1 = styled.p`
-  /* background: #003afe; */
   background: -webkit-linear-gradient(left, #003afe, #00ffa3);
   background: -moz-linear-gradient(right, #003afe, #00ffa3);
   background: -o-linear-gradient(right, #003afe, #00ffa3);
@@ -29,8 +28,19 @@ const P1 = styled.p`
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+
+  font-style: normal;
   font-weight: 800;
   font-size: 140px;
+  line-height: 150px;
+
+  /* border: 1px solid #000000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+
+  /* line-height: 88%; */
+
+  /* font-style: normal; */
+  /* border: 1px; */
   /* display: flex;
   justify-content: flex-end;
   background: linear-gradient(to right, #003afe, #00ffa3);

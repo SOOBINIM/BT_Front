@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logoPath from "../../img/BTMT_Footer.png";
 
-const Footer = styled.header`
+const Footer = styled.footer`
   background-color: green;
   width: 100%;
   height: 452px;
@@ -36,8 +36,6 @@ const Dd = styled.dd`
   display: flex;
   flex-direction: row;
 `;
-
-const Img = styled.img``;
 
 function FooterContent({ title, index }) {
   return (
