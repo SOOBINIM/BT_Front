@@ -41,6 +41,7 @@ const InnerDiv = styled.div`
   background: linear-gradient(90deg, #00ffa3 0%, #003afe 100%);
   background-clip: text;
   color: transparent;
+  /* :nth-child( */
 `;
 
 const ButtonDiv = styled.div`

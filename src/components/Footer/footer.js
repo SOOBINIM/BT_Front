@@ -5,7 +5,7 @@ function Footer() {
   const footerItems = [
     {
       title: "Bitman Web3.0",
-      content: "About",
+      content: ["About"],
     },
     { title: "Community", content: ["BITMAN", "Guilds"] },
     {

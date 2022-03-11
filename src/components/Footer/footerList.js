@@ -3,52 +3,47 @@ import styled from "styled-components";
 import logoPath from "../../img/BTMT_Footer.png";
 
 const Footer = styled.footer`
-  background-color: green;
-  width: 100%;
+  background-color: blue;
+  /* background-color: #04050f; */
+`;
+
+const OutterDiv = styled.div`
+  width: 1320px;
   height: 452px;
-  white-space: pre-line;
+  margin: 0 auto;
+  background-color: skyblue;
+
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
-const ImgTitleDiv = styled.div`
-  display: flex;
+const ImgDiv = styled.div`
+  margin-top: 80px;
+  background-color: navy;
+  width: 406px;
+  height: 112px;
 `;
 
-const UlDivIfo = styled.dl`
+const ContetnsDiv = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
+  background-color: grey;
+  margin-top: 80px;
 `;
 
-const Dl = styled.dl`
-  display: flex;
-  flex-direction: column;
-`;
+function FooterContentItem() {}
 
-const Dt = styled.dt`
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-`;
+function FooterContent({ data }) {
+  // const ContentMap = title.content.map((data) => console.log(data);
 
-const Dd = styled.dd`
-  display: flex;
-  flex-direction: row;
-`;
-
-function FooterContent({ title, index }) {
   return (
     <div>
-      <Dl>
-        <Dt>{title.title}</Dt>
-        <Dd>
-          {title.content}
-          {/* {title.map((data, index) =>
-              console.log("data : " + data + "index : " + index)
-            )} */}
-        </Dd>
-      </Dl>
+      <div>{data.title}</div>
+      <ul>
+        {/* {title.map((e, i) => (
+          <li key={i}>{e}</li>
+        ))} */}
+      </ul>
     </div>
   );
 }
@@ -56,17 +51,17 @@ function FooterContent({ title, index }) {
 function FooterList({ titles, desciption }) {
   return (
     <Footer>
-      <ImgTitleDiv>
-        <div>
+      <OutterDiv>
+        <ImgDiv>
           <img src={logoPath} alt="BTMT Text Logo"></img>
           <p>{desciption.desciption}</p>
-        </div>
-        <UlDivIfo>
+        </ImgDiv>
+        <ContetnsDiv>
           {titles.map((title, index) => (
-            <FooterContent title={title} key={index} />
+            <FooterContent data={title} key={index} />
           ))}
-        </UlDivIfo>
-      </ImgTitleDiv>
+        </ContetnsDiv>
+      </OutterDiv>
     </Footer>
   );
 }

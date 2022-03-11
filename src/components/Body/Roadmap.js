@@ -5,6 +5,57 @@ import styled from "styled-components";
 //   return <div>{data.map((content) => console.log(content))}</div>;
 // }
 
+const OuterDiv = styled.div`
+  width: 1320px;
+  height: 640px;
+  margin: 0 auto;
+`;
+
+const H1 = styled.h1`
+  font-style: normal;
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 98px;
+
+  margin-bottom: 40px;
+  margin: 80px 0px;
+`;
+
+const Ul = styled.ul`
+  display: flex;
+`;
+
+const DataLi = styled.li``;
+
+const ContentsLi = styled.li`
+  display: flex;
+  flex-direction: column;
+  margin-left: 101px;
+  margin-bottom: 40px;
+  border: 1px solid #00ffa3;
+  box-sizing: border-box;
+`;
+
+const DataDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+function RoadmapItem({ data }) {
+  return (
+    <div>
+      <Ul>
+        <DataDiv>
+          <DataLi>{data.date}</DataLi>
+        </DataDiv>
+        <DataDiv>
+          <ContentsLi>{data.contents}</ContentsLi>
+        </DataDiv>
+      </Ul>
+    </div>
+  );
+}
+
 function RoadmapList() {
   const roadmapItems = [
     {
@@ -60,10 +111,14 @@ function RoadmapList() {
     },
   ];
   return (
-    <div>
-      <h1>Roadmap</h1>
-      <div></div>
-    </div>
+    <OuterDiv>
+      <H1>Roadmap</H1>
+      <div>
+        {roadmapItems.map((data) => (
+          <RoadmapItem data={data} />
+        ))}
+      </div>
+    </OuterDiv>
   );
 }
 

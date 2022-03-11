@@ -1,8 +1,7 @@
 import React from "react";
-import bannerPath from "../../img/BTMT_Banner.png";
 import styled from "styled-components";
 
-const Img = styled.img`
+const Video = styled.video`
   width: 100%;
   height: 100%;
 `;
@@ -10,7 +9,9 @@ const Img = styled.img`
 function Banner() {
   return (
     <div>
-      <Img src={bannerPath}></Img>
+      <Video autoPlay loop>
+        <source src="assets/BTMTWebMain.mp4" type="video/mp4" />
+      </Video>
     </div>
   );
 }

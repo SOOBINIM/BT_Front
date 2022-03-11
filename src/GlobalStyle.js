@@ -3,20 +3,19 @@ import reset from "styled-reset";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
-
 const GlobalStyle = createGlobalStyle`
 /* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap'); */
     ${reset}
     * {
     box-sizing: border-box;
-    font-family: "Montserrat";
+    /* font-family: "Montserrat"; */
 
   }
   body{
     background-color: #000000;
     color : #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
   }
   a {
     color: inherit;
@@ -26,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
   } */
   div,a,span,p {
-    font-family: 'Montserrat', sans-serif;  
+    /* font-family: 'Montserrat';   */
   }
 
   button {

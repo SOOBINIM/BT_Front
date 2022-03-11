@@ -16,7 +16,7 @@ const InnerDiv = styled.div`
 
 const TextDiv = styled.div`
   margin-top: 168px;
-  width: 624px;
+  width: 700px;
   height: 300px;
 `;
 
