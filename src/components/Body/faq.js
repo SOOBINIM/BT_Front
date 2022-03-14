@@ -4,9 +4,9 @@ import styled from "styled-components";
 const OuterDiv = styled.div`
   width: 1320px;
   margin: 0 auto;
+  padding: 280px 0;
 
   /* background: #24252a; */
-  border: 2px solid green;
   box-sizing: border-box;
   border-radius: 16px;
 `;
@@ -15,6 +15,7 @@ const InnerDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   /* background-color: red; */
 `;
 
@@ -30,6 +31,7 @@ const H1 = styled.h1`
 
 const TitleLi = styled.li`
   /* background: #24252a; */
+  background: #24252a;
   border-radius: 16px;
 
   padding: 16px 28px;
@@ -61,7 +63,6 @@ const ToggleLi = styled.li`
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  /* or 150% */
 
   color: #24252a;
 `;
@@ -71,8 +72,6 @@ const TitleDiv = styled.div`
   &:hover {
     width: 640px;
     height: 374px;
-    background-color: blue;
-    /* background: #00ffa3; */
     border-radius: 16px;
 
     font-style: normal;
@@ -84,8 +83,6 @@ const TitleDiv = styled.div`
     }
 
     ${ToggleLi} {
-      /* display: block; */
-
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -98,19 +95,12 @@ const TitleDiv = styled.div`
       top: 32px;
     }
   }
-
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; */
 `;
 
-const A = styled.a`
-  /* font-style: normal;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 27px;
+const A = styled.a``;
 
-  color: #24252a; */
+const DescriptionUl = styled.ul`
+  display: flex;
 `;
 
 function FaqItem({ data }) {
@@ -119,9 +109,10 @@ function FaqItem({ data }) {
       <ul>
         <TitleLi>
           <A href="#">{data.title}</A>
-          <ul>
+          <DescriptionUl>
             <ToggleLi>{data.description}</ToggleLi>
-          </ul>
+            <img src="assets/check.png" alt="check"></img>
+          </DescriptionUl>
         </TitleLi>
       </ul>
     </TitleDiv>
@@ -167,8 +158,8 @@ function FaqList() {
         <H1>FAQ</H1>
       </div>
       <InnerDiv>
-        {faqItems.map((data) => (
-          <FaqItem data={data} />
+        {faqItems.map((data, index) => (
+          <FaqItem data={data} key={index} />
         ))}
       </InnerDiv>
     </OuterDiv>

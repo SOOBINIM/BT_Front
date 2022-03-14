@@ -163,10 +163,10 @@ function InfoList() {
   return (
     <InnerDiv>
       <TitleDiv>
-        {infoItems.map((info) => (
+        {infoItems.map((info, index) => (
           // (info) => console.log(info)
 
-          <InfoItem data={info} />
+          <InfoItem data={info} key={index} />
         ))}
       </TitleDiv>
       <ButtonDiv>

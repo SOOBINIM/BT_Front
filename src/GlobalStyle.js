@@ -4,8 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 const GlobalStyle = createGlobalStyle`
-/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"); */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap'); */
     ${reset}
     * {
     box-sizing: border-box;

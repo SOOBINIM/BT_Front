@@ -3,15 +3,14 @@ import styled from "styled-components";
 import logoPath from "../../img/BTMT_Footer.png";
 
 const Footer = styled.footer`
-  background-color: blue;
-  /* background-color: #04050f; */
+  background-color: #04050f;
+  padding: 280px 0;
 `;
 
 const OutterDiv = styled.div`
   width: 1320px;
   height: 452px;
   margin: 0 auto;
-  background-color: skyblue;
 
   display: flex;
   justify-content: space-between;
@@ -19,7 +18,6 @@ const OutterDiv = styled.div`
 
 const ImgDiv = styled.div`
   margin-top: 80px;
-  background-color: navy;
   width: 406px;
   height: 112px;
 `;
@@ -27,23 +25,54 @@ const ImgDiv = styled.div`
 const ContetnsDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: grey;
   margin-top: 80px;
 `;
 
-function FooterContentItem() {}
+const P = styled.p`
+  margin-top: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+`;
+const ContentInnerDiv = styled.div`
+  width: 292px;
+  display: flex;
+  justify-content: flex-end;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+
+  margin-bottom: 32px;
+`;
+
+const Ul = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
+const Li = styled.li`
+  margin-bottom: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+`;
 
 function FooterContent({ data }) {
-  // const ContentMap = title.content.map((data) => console.log(data);
-
   return (
     <div>
-      <div>{data.title}</div>
-      <ul>
-        {/* {title.map((e, i) => (
-          <li key={i}>{e}</li>
-        ))} */}
-      </ul>
+      <ContentInnerDiv>{data.title}</ContentInnerDiv>
+      <Ul>
+        {data.content.map((data, index) => (
+          <Li key={index}>
+            <a href="#">{data}</a>
+          </Li>
+        ))}
+      </Ul>
     </div>
   );
 }
@@ -54,7 +83,7 @@ function FooterList({ titles, desciption }) {
       <OutterDiv>
         <ImgDiv>
           <img src={logoPath} alt="BTMT Text Logo"></img>
-          <p>{desciption.desciption}</p>
+          <P>{desciption.desciption}</P>
         </ImgDiv>
         <ContetnsDiv>
           {titles.map((title, index) => (

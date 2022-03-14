@@ -6,7 +6,7 @@ const OuterDiv = styled.div`
   width: 1320px;
   margin: 0 auto;
 
-  border: 2px solid green;
+  /* border: 2px solid green; */
   box-sizing: border-box;
 `;
 
@@ -16,7 +16,8 @@ const H1 = styled.h1`
   font-size: 80px;
   line-height: 98px;
   margin-bottom: 40px;
-  margin: 80px 0px;
+  margin-top: 400px;
+  /* margin: 80px 0px; */
 `;
 
 const H2 = styled.h1`
@@ -41,12 +42,64 @@ const Table = styled.table`
 `;
 
 const Thead = styled.thead`
+  width: 1320px;
+`;
+
+const HeadTr = styled.tr`
   display: flex;
   justify-content: space-between;
 `;
 
-const Tr = styled.tr`
-  margin: 32px 0px;
+const HeadTd = styled.td`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #66666a;
+`;
+
+const BodyTbody = styled.tbody`
+  width: 1320px;
+  height: 647px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const BodyTr = styled.tr`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const BodyTd = styled.td`
+  color: #66666a;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+`;
+
+const FootSpan = styled.span`
+  width: 1090px;
+  height: 0px;
+  background-color: red;
+`;
+
+const FootTfoot = styled.tfoot`
+  width: 1320px;
+`;
+const FootTr = styled.tr`
+  display: flex;
+  justify-content: space-between;
+`;
+const FootTd = styled.td`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #646b79;
 `;
 
 function Distribution() {
@@ -162,40 +215,43 @@ function Distribution() {
         <Table {...getTableProps()}>
           <Thead>
             {headerGroups.map((headerGroup) => (
-              <Tr {...headerGroup.getHeaderGroupProps()}>
+              <HeadTr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
+                  <HeadTd {...column.getHeaderProps()}>
                     {column.render("Header")}
-                  </th>
+                  </HeadTd>
                 ))}
-              </Tr>
+              </HeadTr>
             ))}
           </Thead>
-          <tbody {...getTableBodyProps()}>
+          <BodyTbody {...getTableBodyProps()}>
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()}>
+                <BodyTr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
                     return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      <BodyTd {...cell.getCellProps()}>
+                        {cell.render("Cell")}
+                      </BodyTd>
                     );
                   })}
-                </tr>
+                </BodyTr>
               );
             })}
-          </tbody>
-          <tfoot>
+          </BodyTbody>
+          <FootSpan></FootSpan>
+          <FootTfoot>
             {footerGroups.map((group) => (
-              <tr {...group.getFooterGroupProps()}>
+              <FootTr {...group.getFooterGroupProps()}>
                 {group.headers.map((column) => (
-                  <td {...column.getFooterProps()}>
+                  <FootTd {...column.getFooterProps()}>
                     {column.render("Footer")}
-                  </td>
+                  </FootTd>
                 ))}
-              </tr>
+              </FootTr>
             ))}
-          </tfoot>
+          </FootTfoot>
         </Table>
       </div>
     </OuterDiv>

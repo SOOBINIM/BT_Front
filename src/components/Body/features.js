@@ -182,8 +182,8 @@ function FeaturesList() {
       <H1>Features</H1>
       <InnerDiv>
         <StlyedSlider {...settings}>
-          {featuresItems.map((features) => (
-            <FeaturesItme data={features} />
+          {featuresItems.map((features, index) => (
+            <FeaturesItme data={features} key={index} />
           ))}
         </StlyedSlider>
       </InnerDiv>

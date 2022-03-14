@@ -4,27 +4,25 @@ import styled from "styled-components";
 const OuterDiv = styled.div`
   width: 1320px;
   margin: 0 auto;
+  padding: 280px 0;
 `;
 
 const InnerDiv = styled.div`
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  /* align-content: space-between; */
-  border: 2px solid red;
-  /* width: 1320px; */
-  border: 2px solid white;
+  justify-content: space-between; */
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 44px 12px;
 `;
 
 const PartnersDiv = styled.div`
-  /* margin: 16px; */
-  margin-top: 8px;
+  /* margin-top: 8px; */
   width: 322px;
   height: 120px;
-  border: 2px solid green;
-  &:nth-child(4) {
-    background-color: red;
-  }
+
+  background: #151e2f;
 `;
 
 const H1 = styled.h1`
@@ -36,75 +34,76 @@ const H1 = styled.h1`
   margin: 80px 0px;
 `;
 
+const Img = styled.img`
+  /* display: inline; */
+  margin: 0px auto;
+  height: 50%;
+  /* text-align: center; */
+  /* min-height: 123px; */
+
+  /* height: 100%; */
+  /* width: 322px;
+  height: 120px; */
+`;
+
 function PartnersItem({ data }) {
-  return <PartnersDiv>{data.title}</PartnersDiv>;
+  return (
+    <PartnersDiv>
+      {data.title}
+      <Img src={data.src}></Img>
+    </PartnersDiv>
+  );
 }
 
 function PartnersList() {
   const PartnersItems = [
     {
-      src: "",
-      title: "1",
+      src: "assets/BTMT_Partners1.png",
     },
     {
-      src: "",
-      title: "2",
+      src: "assets/BTMT_Partners2.png",
     },
     {
-      src: "",
-      title: "3",
+      src: "assets/BTMT_Partners3.png",
     },
     {
-      src: "",
-      title: "4",
+      src: "assets/BTMT_Partners4.png",
     },
     {
-      src: "",
-      title: "5",
+      src: "assets/BTMT_Partners5.png",
     },
     {
-      src: "",
-      title: "6",
+      src: "assets/BTMT_Partners6.png",
     },
     {
-      src: "",
-      title: "7",
+      src: "assets/BTMT_Partners7.png",
     },
     {
-      src: "",
-      title: "8",
+      src: "assets/BTMT_Partners8.png",
     },
     {
-      src: "",
-      title: "9",
+      src: "assets/BTMT_Partners9.png",
     },
     {
-      src: "",
-      title: "10",
+      src: "assets/BTMT_Partners10.png",
     },
     {
-      src: "",
-      title: "11",
+      src: "assets/BTMT_Partners11.png",
     },
     {
-      src: "",
-      title: "12",
+      src: "assets/BTMT_Partners12.png",
     },
     {
-      src: "",
-      title: "13",
+      src: "assets/BTMT_Partners13.png",
     },
     {
-      src: "",
-      title: "14",
+      src: "assets/BTMT_Partners14.png",
     },
     {
-      src: "",
-      title: "15",
+      src: "assets/BTMT_Partners15.png",
     },
     {
-      src: "",
-      title: "16",
+      src: "assets/BTMT_Partners16.png",
     },
   ];
 
@@ -113,8 +112,8 @@ function PartnersList() {
       <H1>Partners</H1>
 
       <InnerDiv>
-        {PartnersItems.map((data) => (
-          <PartnersItem data={data} />
+        {PartnersItems.map((data, index) => (
+          <PartnersItem data={data} key={index} />
         ))}
       </InnerDiv>
     </OuterDiv>

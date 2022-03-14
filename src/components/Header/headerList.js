@@ -71,8 +71,8 @@ function TitleList({ titles }) {
         <img src={logoPath} alt="BTMT Text Symbol"></img>
         <Nav>
           <Ul>
-            {titles.map((title) => (
-              <Title title={title} />
+            {titles.map((title, index) => (
+              <Title title={title} key={index} />
             ))}
           </Ul>
           <Button>Discord</Button>

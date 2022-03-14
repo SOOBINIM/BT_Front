@@ -5,8 +5,8 @@ const OuterDiv = styled.div`
   width: 1320px;
   margin: 0 auto;
 
-  background: #24252a;
-  border: 2px solid green;
+  /* background: #24252a; */
+  /* border: 2px solid green; */
   box-sizing: border-box;
   border-radius: 16px;
 `;
@@ -17,8 +17,6 @@ const InnterDiv = styled.div`
   margin: 0 auto;
   flex-direction: column;
 
-  background: #24252a;
-  border: 2px solid blue;
   box-sizing: border-box;
   border-radius: 16px;
 `;
@@ -28,27 +26,32 @@ const H1 = styled.h1`
   font-weight: 800;
   font-size: 80px;
   line-height: 98px;
-  margin-bottom: 40px;
-  margin: 80px 0px;
+  margin-top: 280px;
+  margin-bottom: 80px;
+  /* margin-bottom: 40px; */
+  /* margin: 80px 0px; */
 `;
 
-const Dl = styled.dl`
+const TiersDiv = styled.div`
   display: flex;
-  flex-direction: column;
+  /* align-items: center; */
 
-  background: #24252a;
-  border: 1px solid #00ffa3;
+  justify-content: space-between;
+  /* justify-content: space-between; */
+  /* border: 1px solid red; */
+`;
+
+const TierUl = styled.ul`
+  /* margin: 32px 0px; */
+  /* background: #24252a; */
+  /* border: 1px solid orange; */
   box-sizing: border-box;
   border-radius: 16px;
 `;
 
-const TitleDiv = styled.div`
+const TiersH1 = styled.h1`
   display: flex;
-  align-items: center;
-
-  justify-content: space-around;
-  margin-bottom: 72px;
-  background-color: red;
+  justify-content: center;
 
   font-style: normal;
   font-weight: 700;
@@ -56,32 +59,68 @@ const TitleDiv = styled.div`
   line-height: 39px;
 `;
 
-const ButtonDiv = styled.div`
+const TitleLi = styled.li`
+  height: 904px;
+  width: 413px;
+  background: #24252a;
+
+  border: 1px solid #00ffa3;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin-top: 48px;
   display: flex;
-  align-items: center;
-
-  justify-content: space-between;
-  margin-bottom: 72px;
-
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 39px;
+  flex-direction: column;
+  align-content: space-between;
 `;
 
-const StatusDd = styled.dd`
+const CircleWrapper = styled.div`
+  display: flex;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: rgba(0, 255, 163, 0.4);
+  /* transform: matrix(1, 0, 0, -1, 0, 0); */
+`;
+
+const Circle = styled.div`
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(0, 255, 163);
+`;
+
+const TitleUl = styled.ul`
+  margin-top: 40px;
+  margin-left: 32px;
+  margin-right: 32px;
+`;
+
+const SubTitleLi = styled.li`
+  margin-top: 16px;
+  /* margin-bottom: 8px; */
+`;
+
+const SubTitleLiLi = styled.li`
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
-  /* identical to box height */
 
-  color: #ffffff;
-
-  margin: 8px 0px;
+  margin-bottom: 8px;
 `;
 
-const DescDd = styled.dd`
+const TitleDiv = styled.div`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #00ffa3;
+`;
+
+const TextLi = styled.li`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -90,144 +129,177 @@ const DescDd = styled.dd`
   color: #a7a8aa;
 `;
 
-const TitleDt = styled.dt`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-
-  margin: 16px 0px;
+const LineDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
 `;
 
-const TempDiv = styled.div`
-  background-color: purple;
+const Line = styled.div`
+  position: absolute;
+  top: 22px;
+
+  border-style: dashed;
+
+  /* display: flex; */
+  /* justify-content: center; */
+  width: 907px;
+  height: 6px;
+
+  background: linear-gradient(270deg, #003afe 0%, #0082dd 36.48%, #00ffa3 100%),
+    linear-gradient(270deg, #003afe 0%, #0082dd 36.48%, #00ffa3 100%);
 `;
-
-const Button = styled.button`
-  width: 413px;
-  height: 68px;
-  left: 0px;
-  top: 936px;
-
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-
-  color: #040619;
-
-  margin: 32px 0px;
-
-  background: #00ffa3;
-  border-radius: 80px;
-`;
-
-function TiresItmeList({ data }) {
-  return <TempDiv>{data}</TempDiv>;
-}
-
-function TiresItem({ data }) {
-  return (
-    <Dl>
-      <TitleDt>{data.title}</TitleDt>
-      <StatusDd>
-        {data.status.map((statusData) => (
-          <TiresItmeList data={statusData} />
-        ))}
-      </StatusDd>
-      <DescDd>
-        {data.description.map((descData) => (
-          <TiresItmeList data={descData} />
-        ))}
-      </DescDd>
-    </Dl>
-  );
-}
 
 function TiresList() {
   const tireItems = [
     {
-      title: ["One Star"],
-      status: ["HODL 100 BTMT"],
-      description: ["You can join the Web3.0 BITMAN Discord community"],
-    },
-    {
-      title: ["Benefits"],
-      status: [
-        "HODL 100 BTMT",
-        "Research and Content",
-        "Research and Content",
-        "Contribution Rewards",
-        "Make Governance Proposals",
-      ],
-      description: [
-        "ou can join the Web3.0 BITMAN Discord community",
-        "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers.",
-        "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers.",
-        "If you post articles and share your own ideas to the community,you will have chances to get rewards.",
-        "As a member of Web3.0 BITMAN community, you can propose and suggest your novel ideas and vision to the",
-      ],
-    },
-    {
-      title: ["Two Stars"],
-      status: ["HODL 500 BTMT"],
-
-      description: ["You can join the Web3.0 BITMAN Discord community"],
-    },
-    {
-      title: ["Benefits"],
-      status: [
-        "Normal Guild Channel",
-        "Normal Guids",
-        "Community Game Participation",
-        "Meetings With Founders",
-      ],
-      description: [
-        "ou can join the Web3.0 BITMAN Discord community",
-        "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers.",
-        "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers.",
-        "If you post articles and share your own ideas to the community,you will have chances to get rewards.",
+      title: "Tier 1",
+      content: [
+        {
+          title: "One Star",
+          list: [
+            {
+              subTitle: "HODL 100 BTMT",
+              text: "You can join the Web3.0 BITMAN Discord community",
+            },
+          ],
+        },
+        {
+          title: "Benefits",
+          list: [
+            {
+              subTitle: "HODL 100 BTMT",
+              text: "You can join the Web3.0 BITMAN Discord community",
+            },
+            {
+              subTitle: "Research and Content",
+              text: "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers.",
+            },
+            {
+              subTitle: "Research and Content",
+              text: "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers.",
+            },
+            {
+              subTitle: "Contribution Rewards",
+              text: "If you post articles and share your own ideas to the community,you will have chances to get rewards.",
+            },
+            {
+              subTitle: "Make Governance Proposals",
+              text: "As a member of Web3.0 BITMAN community, you can propose and suggest your novel ideas and vision to the",
+            },
+          ],
+        },
       ],
     },
     {
-      title: ["Three Stars"],
-      status: ["BTMT NFT Holders & Hodl 2,000 BTMT"],
-      description: ["You can join the Web3.0 BITMAN Discord community"],
+      title: "Tier 2",
+      content: [
+        {
+          title: "Two Star",
+          list: [
+            {
+              subTitle: "HODL 500 BTMT",
+              text: "You can join the Web3.0 BITMAN Discord community",
+            },
+          ],
+        },
+        {
+          title: "Benefits",
+          list: [
+            {
+              subTitle: "Normal Guild Channel",
+              text: "You can join the Web3.0 BITMAN Discord community",
+            },
+            {
+              subTitle: "Normal Guids",
+              text: "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers.",
+            },
+            {
+              subTitle: "Community Game Participation",
+              text: "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers.",
+            },
+            {
+              subTitle: "Meetings With Founders",
+              text: "If you post articles and share your own ideas to the community,you will have chances to get rewards.",
+            },
+          ],
+        },
+      ],
     },
     {
-      title: ["Benefits"],
-      status: [
-        "Exclusive Guilds Channel",
-        "IDO/IEO Deal Access",
-        "Research and Content",
-      ],
-      description: [
-        "You can participate in the exclusive guilds to enjoy interaction with enthusiastic BTMT holders. You will be exposed by differentiated and valuable information than below Tier",
-        "IDO/IEO Deal Access Tier 3 users are the only group members who can access to exclusive and attractive IDO/IEO deals provided by Web3.0 BITMAN community.",
-        "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers. ",
+      title: "Tier 3",
+      content: [
+        {
+          title: "Three Star",
+          list: [
+            {
+              subTitle: "BTMT NFT Holders & Hodl 2,000 BTMT",
+              text: "You can join the Web3.0 BITMAN Discord community",
+            },
+          ],
+        },
+        {
+          title: "Benefits",
+          list: [
+            {
+              subTitle: "Exclusive Guilds Channel",
+              text: "You can participate in the exclusive guilds to enjoy interaction with enthusiastic BTMT holders.\nYou will be exposed by differentiated and valuable information than below Tier",
+            },
+            {
+              subTitle: "IDO/IEO Deal Access",
+              text: "IDO/IEO Deal Access\nTier 3 users are the only group members who can access to exclusive and attractive IDO/IEO deals provided by Web3.0 BITMAN community.",
+            },
+            {
+              subTitle: "Research and Content",
+              text: "You will be able to enjoy research articles and content provided by BITMAN users and BITMAN Influencers. ",
+            },
+          ],
+        },
       ],
     },
   ];
+
   return (
     <OuterDiv>
       <InnterDiv>
         <H1>Tiers</H1>
-        <TitleDiv>
-          <h1>TIER 1</h1>
-          <h1>TIER 2</h1>
-          <h1>TIER 3</h1>
-        </TitleDiv>
+        <LineDiv>
+          <Line></Line>
+        </LineDiv>
+        <TiersDiv>
+          {tireItems.map((data, index) => (
+            <TierUl>
+              <CircleWrapper>
+                <Circle></Circle>
+              </CircleWrapper>
+              <TiersH1>{data.title}</TiersH1>
+              <TitleLi key={index}>
+                {data.content.map((data, index) => (
+                  <TitleUl>
+                    <li>
+                      <TitleDiv key={index}>{data.title}</TitleDiv>
+                      <ul>
+                        <li>
+                          {data.list.map((data, index) => (
+                            <SubTitleLi>
+                              <SubTitleLiLi key={index}>
+                                {data.subTitle}
+                              </SubTitleLiLi>
+                              <ul>
+                                <TextLi>{data.text}</TextLi>
+                              </ul>
+                            </SubTitleLi>
+                          ))}
+                        </li>
+                      </ul>
+                    </li>
+                  </TitleUl>
+                ))}
+              </TitleLi>
+            </TierUl>
+          ))}
+        </TiersDiv>
       </InnterDiv>
-      <div>
-        {tireItems.map((tires) => (
-          <TiresItem data={tires} />
-        ))}
-      </div>
-      <ButtonDiv>
-        <Button>Go to be Tire1</Button>
-        <Button>Go to be Tire2</Button>
-        <Button>Go to be Tire3</Button>
-      </ButtonDiv>
     </OuterDiv>
   );
 }

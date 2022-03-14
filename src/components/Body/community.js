@@ -7,22 +7,12 @@ const Div = styled.div`
 `;
 
 const H1 = styled.div`
-  position: static;
-  width: 1283px;
-  height: 98px;
-  left: 18.5px;
-  top: 0px;
-
+  margin-top: 280px;
   font-style: normal;
   font-weight: 800;
   font-size: 80px;
   line-height: 98px;
   color: #ffffff;
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 80px 0px;
 `;
 // const Div = styled.div`
 //   background: -webkit-linear-gradient(left, #00ffa3, #003afe);
@@ -38,9 +28,9 @@ const H1 = styled.div`
 const InnerDiv = styled.div`
   display: flex;
   margin: 80px 0px;
-  background: linear-gradient(90deg, #00ffa3 0%, #003afe 100%);
-  background-clip: text;
-  color: transparent;
+
+  /* background-clip: text; */
+  /* color: transparent; */
   /* :nth-child( */
 `;
 
@@ -72,20 +62,58 @@ const Button = styled.button`
 `;
 
 const Circle = styled.div`
-  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background: linear-gradient(90deg, #00ffa3 0%, #003afe 100%); */
+
+  margin: 0;
+  padding: 0;
+
   width: 300px;
   height: 300px;
   /* left: -90px; */
   border-radius: 50%;
   text-align: center;
-  background-color: #00c8c8;
+  /* background-color: #00c8c8; */
+  &:nth-of-type(1) {
+    background: linear-gradient(to right, #00ffa3, #01d3b8);
+  }
+  &:nth-of-type(2) {
+    background: linear-gradient(to right, #01d9b5, #01adc9);
+  }
+  &:nth-of-type(3) {
+    background: linear-gradient(to right, #01b3c7, #0187db);
+  }
+  &:nth-of-type(4) {
+    background: linear-gradient(to right, #018dd8, #0161ed);
+  }
+  &:nth-of-type(5) {
+    background: linear-gradient(to right, #0167ea, #003afe);
+  }
+`;
+
+const Span = styled.span`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 40px;
+
+  text-align: center;
+`;
+
+const P = styled.p`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 40px;
 `;
 
 function CommunityItem({ data }) {
   return (
     <Circle style={{ zIndex: data.index }}>
-      <span>{data.title}</span>
-      <p>{data.description}</p>
+      <Span>{data.title}</Span>
+      <P>{data.description}</P>
     </Circle>
   );
 }
@@ -95,26 +123,21 @@ function Community() {
     {
       title: "Traders’",
       description: "Guild",
-      index: 1,
     },
     {
       title: "NFT holers’",
       description: "Guild",
-      index: 2,
     },
     {
       title: "DeFi investors’",
       description: "Guild",
-      index: 3,
     },
     {
       title: "Writers’",
       description: "Guild",
-      index: 4,
     },
     {
       title: "Researchers’",
-      index: 5,
       description: "Guild",
     },
   ];
@@ -122,8 +145,8 @@ function Community() {
     <Div>
       <H1>Exclusive Guilds Communities</H1>
       <InnerDiv>
-        {community.map((community) => (
-          <CommunityItem data={community} />
+        {community.map((community, index) => (
+          <CommunityItem data={community} key={index} />
         ))}
       </InnerDiv>
       <ButtonDiv>
